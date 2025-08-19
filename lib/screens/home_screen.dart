@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import '../providers/fire_notice_provider.dart';
 
 import '../widgets/status_card.dart';
-
 import '../widgets/notice_list.dart';
+import '../widgets/video_stream_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -148,45 +148,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Container(
+                    const VideoStreamWidget(
+                      serverUrl: 'http://localhost:5000',
                       height: 300,
                       width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.black87,
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(
-                          color: Colors.grey.withValues(alpha: 0.3),
-                          width: 1,
-                        ),
-                      ),
-                      child: const Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.videocam,
-                              size: 64,
-                              color: Colors.grey,
-                            ),
-                            SizedBox(height: 16),
-                            Text(
-                              'Video Stream từ Backend',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 16,
-                              ),
-                            ),
-                            SizedBox(height: 8),
-                            Text(
-                              'Kết nối qua API',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
                     ),
                   ],
                 ),
